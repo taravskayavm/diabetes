@@ -6,3 +6,23 @@ diabetes <- data %>%
   mutate_at(vars(Urea, HbA1c, Chol, TG, HDL, LDL, VLDL, BMI), ~as.numeric(gsub(",", ".", .)))
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
