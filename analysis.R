@@ -1,3 +1,3 @@
-View(data)
+View(diabetes)
 
 getwd()
