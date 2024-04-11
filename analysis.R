@@ -1,5 +1,4 @@
-View(diabetes)
-
-
+diabetes
+class(diabetes)
 
 
