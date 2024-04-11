@@ -1,1 +1,5 @@
 View(diabetes)
+
+
+
+
