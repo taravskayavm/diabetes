@@ -10,7 +10,7 @@
 # install.packages("MASS")
 # install.packages("GGally")
 # install.packages("readr")
-
+# install.packages("nnet")
 # Packages ---------------------------------------------------------------- 
 
 library(ggplot2)
@@ -29,7 +29,7 @@ library(ggcorrplot)
 library(MASS)
 library(readr)
 library(stringr)
-
+library(nnet)
 
 
 
