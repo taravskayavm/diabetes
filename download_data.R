@@ -21,7 +21,7 @@ unique(diabetes$Gender)
 # Выводим структуру данных
 str(diabetes)
 
-
+View(diabetes)
 
 
 

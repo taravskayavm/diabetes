@@ -34,8 +34,33 @@ overall_stats <- summarise(diabetes,
 
 
 
-# Объединение данных по полю CLASS из данных класса с данными из общего датасета по полю ID
-merged_data <- merge(overall_stats, class_gender_stats, by.x = "ID", by.y = "CLASS", suffixes = c("_overall", "_class"), all.y = TRUE)
+# Гистограмма для распределения возраста с разделением по полу и классу
+ggplot(data = diabetes, aes(x = AGE)) +
+  geom_histogram(binwidth = 5, color = "black", fill = "lightblue", alpha = 0.7) +
+  facet_grid(CLASS~Gender, scales = "free") +
+  labs(title = "Age Distribution by Gender and Class", x = "Age", y = "Count")
 
-# Вывод результатов
-print(merged_data)
+
+# Гистограмма для уровня мочевой кислоты с разделением по полу и классу
+ggplot(data = diabetes, aes(x = Urea)) +
+  geom_histogram(binwidth = 5, color = "black", fill = "lightgreen", alpha = 0.7) +
+  facet_grid(CLASS~Gender, scales = "free") +
+  labs(title = "Distribution of Urea Level by Gender and Class", x = "Urea", y = "Count")
+
+# Гистограмма для уровня креатинина с разделением по полу и классу
+ggplot(data = diabetes, aes(x = Cr)) +
+  geom_histogram(binwidth = 0.1, color = "black", fill = "lightyellow", alpha = 0.7) +
+  facet_grid(CLASS~Gender, scales = "free") +
+  labs(title = "Distribution of Creatinine Level by Gender and Class", x = "Creatinine Level", y = "Count")
+
+# Гистограмма для уровня гликированного гемоглобина с разделением по полу и классу
+ggplot(data = diabetes, aes(x = HbA1c)) +
+  geom_histogram(binwidth = 0.5, color = "black", fill = "lightblue", alpha = 0.7) +
+  facet_grid(CLASS~Gender, scales = "free") +
+  labs(title = "Distribution of HbA1c by Gender and Class", x = "HbA1c", y = "Count")
+
+# Гистограмма для уровня холестерина с разделением по полу и классу
+ggplot(data = diabetes, aes(x = Chol, fill = CLASS)) +
+  geom_histogram(binwidth = 10, color = "black", alpha = 0.7, position = "dodge") +
+  facet_grid(.~Gender) +
+  labs(title = "Distribution of Cholesterol Level by Gender and Class", x = "Cholesterol Level", y = "Count", fill = "Class")
