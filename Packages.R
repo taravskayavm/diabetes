@@ -11,6 +11,8 @@
 # install.packages("GGally")
 # install.packages("readr")
 # install.packages("nnet")
+# install.packages("factoextra")
+
 # Packages ---------------------------------------------------------------- 
 
 library(ggplot2)
@@ -30,7 +32,8 @@ library(MASS)
 library(readr)
 library(stringr)
 library(nnet)
-
+library(stats)
+library(factoextra)
 
 
 

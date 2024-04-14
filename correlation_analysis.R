@@ -1,4 +1,4 @@
-# Корреляции между переменными:
+# 3. Корреляции между переменными:
 correlation_matrix <- diabetes[, c(4:13)] %>% 
   cor()
 
@@ -8,3 +8,5 @@ ggcorrplot::ggcorrplot(correlation_matrix,
                        type = "upper", 
                        lab = TRUE, 
                        tl.col = "black")
+
+

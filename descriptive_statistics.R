@@ -1,4 +1,6 @@
-# Описательная статистика -------------------------------------------------
+# 2. Описательная статистика -------------------------------------------------
+
+str(diabetes)
 
 # Определение функции для вычисления моды
 Mode <- function(x) {
@@ -33,34 +35,65 @@ overall_stats <- summarise(diabetes,
 )
 
 
-
-# Гистограмма для распределения возраста с разделением по полу и классу
+# Гистограмма распределения возраста с разделением по полу и классу
 ggplot(data = diabetes, aes(x = AGE)) +
   geom_histogram(binwidth = 5, color = "black", fill = "lightblue", alpha = 0.7) +
   facet_grid(CLASS~Gender, scales = "free") +
   labs(title = "Age Distribution by Gender and Class", x = "Age", y = "Count")
 
-
-# Гистограмма для уровня мочевой кислоты с разделением по полу и классу
+# Гистограмма распределения уровня мочевой кислоты с разделением по полу и классу
 ggplot(data = diabetes, aes(x = Urea)) +
-  geom_histogram(binwidth = 5, color = "black", fill = "lightgreen", alpha = 0.7) +
+  geom_histogram(binwidth = 1, color = "black", fill = "lightgreen", alpha = 0.7) +
   facet_grid(CLASS~Gender, scales = "free") +
-  labs(title = "Distribution of Urea Level by Gender and Class", x = "Urea", y = "Count")
+  labs(title = "Urea Distribution by Gender and Class", x = "Urea", y = "Count")
 
-# Гистограмма для уровня креатинина с разделением по полу и классу
+
+# Гистограмма распределения уровня креатинина с разделением по полу и классу
 ggplot(data = diabetes, aes(x = Cr)) +
-  geom_histogram(binwidth = 0.1, color = "black", fill = "lightyellow", alpha = 0.7) +
+  geom_histogram(binwidth = 15, color = "black", fill = "lightyellow", alpha = 0.7) +
   facet_grid(CLASS~Gender, scales = "free") +
-  labs(title = "Distribution of Creatinine Level by Gender and Class", x = "Creatinine Level", y = "Count")
+  labs(title = "Creatinine Distribution by Gender and Class", x = "Cr", y = "Count")
 
-# Гистограмма для уровня гликированного гемоглобина с разделением по полу и классу
+# Гистограмма распределения уровня гликированного гемоглобина с разделением по полу и классу
 ggplot(data = diabetes, aes(x = HbA1c)) +
-  geom_histogram(binwidth = 0.5, color = "black", fill = "lightblue", alpha = 0.7) +
-  facet_grid(CLASS~Gender, scales = "free") +
+  geom_histogram(binwidth = 1, color = "black", fill = "pink", alpha = 0.7) +
+  facet_grid(Gender ~ CLASS) +
   labs(title = "Distribution of HbA1c by Gender and Class", x = "HbA1c", y = "Count")
 
-# Гистограмма для уровня холестерина с разделением по полу и классу
-ggplot(data = diabetes, aes(x = Chol, fill = CLASS)) +
-  geom_histogram(binwidth = 10, color = "black", alpha = 0.7, position = "dodge") +
-  facet_grid(.~Gender) +
-  labs(title = "Distribution of Cholesterol Level by Gender and Class", x = "Cholesterol Level", y = "Count", fill = "Class")
+
+# Гистограмма распределения уровня холестерина с разделением по полу и классу
+ggplot(data = diabetes, aes(x = Chol)) +
+  geom_histogram(binwidth = 1, color = "black", fill = "green", alpha = 0.7) +
+  facet_grid(Gender ~ CLASS) +
+  labs(title = "Distribution of Cholesterol by Gender and Class", x = "Cholesterol", y = "Count")
+
+
+# Гистограмма для уровня триглицеридов с разделением по полу и классу
+ggplot(data = diabetes, aes(x = TG)) +
+  geom_histogram(binwidth = 1, color = "black", fill = "blue", alpha = 0.7) +
+  facet_grid(Gender ~ CLASS) +
+  labs(title = "Distribution of Triglycerides by Gender and Class", x = "Triglycerides", y = "Count")
+
+# Гистограмма для уровня HDL с разделением по полу и классу
+ggplot(data = diabetes, aes(x = HDL)) +
+  geom_histogram(binwidth = 1, color = "black", fill = "purple", alpha = 0.7) +
+  facet_grid(Gender ~ CLASS) +
+  labs(title = "Distribution of HDL by Gender and Class", x = "HDL", y = "Count")
+
+# Гистограмма для уровня LDL с разделением по полу и классу
+ggplot(data = diabetes, aes(x = LDL)) +
+  geom_histogram(binwidth = 1, color = "black", fill = "yellow", alpha = 0.7) +
+  facet_grid(Gender ~ CLASS) +
+  labs(title = "Distribution of LDL by Gender and Class", x = "LDL", y = "Count")
+
+# Гистограмма для уровня VLDL с разделением по полу и классу
+ggplot(data = diabetes, aes(x = VLDL)) +
+  geom_histogram(binwidth = 1, color = "black", fill = "red", alpha = 0.7) +
+  facet_grid(Gender ~ CLASS) +
+  labs(title = "Distribution of VLDL by Gender and Class", x = "VLDL", y = "Count")
+
+# Гистограмма для уровня BMI с разделением по полу и классу
+ggplot(data = diabetes, aes(x = BMI)) +
+  geom_histogram(binwidth = 2, color = "black", fill = "orange", alpha = 0.7) +
+  facet_grid(Gender ~ CLASS) +
+  labs(title = "Distribution of BMI by Gender and Class", x = "BMI", y = "Count")

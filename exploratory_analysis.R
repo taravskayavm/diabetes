@@ -186,7 +186,7 @@ patients_count
 ggplot(data = patients_count, aes(x = CLASS, y = count, fill = Gender)) +
   geom_bar(stat = "identity", position = "dodge") +
   labs(title = "Number of patients by gender and class", x = "Class", y = "Number of patients") +
-  scale_fill_manual(values = c("#4169E1", "#DB7093"))  + # Настройка цветов
+  scale_fill_manual(values = c("#DB7093", "#4169E1"))  + # Настройка цветов
   theme(plot.title = element_text(hjust = 0.5))
 
 # Гистограмма распределения возраста пациентов в зависимости от класса
