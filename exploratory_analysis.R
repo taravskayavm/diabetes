@@ -140,8 +140,6 @@ upper_bound_VLDL <- Q3_VLDL + 1.5 * IQR_VLDL
 outliers_VLDL <- diabetes$VLDL < lower_bound_VLDL | diabetes$VLDL > upper_bound_VLDL
 outliers_VLDL_data <- diabetes[outliers_VLDL, ]
 print(outliers_VLDL_data, n = 74)
-diabetes <- diabetes %>%
-
 
 
 # Вычисляем межквартильный размах для показателя BMI  
@@ -157,6 +155,7 @@ upper_bound_BMI <- Q3_BMI + 1.5 * IQR_BMI
 outliers_BMI <- diabetes$BMI < lower_bound_BMI | diabetes$BMI > upper_bound_BMI
 outliers_BMI_data <- diabetes[outliers_BMI, ]
 print(outliers_BMI_data, n = 87)
+
 
 # Замена значения в колонке BMI
 diabetes <- diabetes %>%
@@ -185,7 +184,7 @@ patients_count
 # Столбчатая диаграмма распределения числа пациентов по полу и классу
 ggplot(data = patients_count, aes(x = CLASS, y = count, fill = Gender)) +
   geom_bar(stat = "identity", position = "dodge") +
-  labs(title = "Number of patients by gender and class", x = "Class", y = "Number of patients") +
+  labs(title = "Распределение числа пациентов по полу и классу диабета", x = "Класс", y = "Число пациентов") +
   scale_fill_manual(values = c("#DB7093", "#4169E1"))  + # Настройка цветов
   theme(plot.title = element_text(hjust = 0.5))
 
