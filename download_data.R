@@ -7,8 +7,9 @@ data <- read_csv("https://raw.githubusercontent.com/taravskayavm/diabetes/main/d
 # Конвертируем их в tibble, меняем запятую на точку в дробных числах, заменяем пустые значения на NA
 
 diabetes <- as_tibble(data) %>%
-  mutate_at(vars(Urea, HbA1c, Chol, TG, HDL, LDL, VLDL, BMI), 
-            ~as.numeric(gsub(",", ".", .)))
+  mutate(across(c(Urea, HbA1c, Chol, TG, HDL, LDL, VLDL, BMI), 
+                ~as.numeric(gsub(",", ".", .)))
+  )
 
 # Просмотр уникальных значений для предобработки данных
 unique(diabetes$Gender)

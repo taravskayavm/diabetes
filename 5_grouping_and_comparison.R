@@ -27,3 +27,4 @@ print(chi_sq_test)
 # Двухвыборочный независимый t-тест для уровня холестерина между классом
 t_test_result <- t.test(Chol ~ factor(CLASS), data = diabetes_subset, subset = CLASS != "N")
 print(t_test_result)
+

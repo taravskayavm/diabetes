@@ -18,7 +18,8 @@
 # install.packages("ggmosaic")
 # install.packages("treemapify")
 # install.packages("vcd")
-
+# install.packages("ggstatsplot")
+# install.packages("ggpubr")
 # Packages ---------------------------------------------------------------- 
 
 library(ggplot2)
@@ -47,4 +48,5 @@ library(gridExtra)
 library(ggmosaic)
 library(treemapify)
 library(vcd)
-
+library(ggstatsplot)
+library(ggpubr)
