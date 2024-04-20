@@ -12,6 +12,12 @@
 # install.packages("readr")
 # install.packages("nnet")
 # install.packages("factoextra")
+# install.packages("DescTools")
+# install.packages("patchwork")
+# install.packages("gridExtra")
+# install.packages("ggmosaic")
+# install.packages("treemapify")
+# install.packages("vcd")
 
 # Packages ---------------------------------------------------------------- 
 
@@ -35,6 +41,10 @@ library(nnet)
 library(stats)
 library(factoextra)
 library(cowplot)
-
-
+library(DescTools)
+library(patchwork)
+library(gridExtra)
+library(ggmosaic)
+library(treemapify)
+library(vcd)
 

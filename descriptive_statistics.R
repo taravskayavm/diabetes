@@ -207,3 +207,40 @@ ggplot(data = diabetes, aes(x = CLASS, y = BMI, fill = Gender)) +
   scale_fill_manual(values = c("pink", "lightblue"))
 
 
+
+# Группировка графиков ----------------------------------------------------
+
+# Создание графиков для каждого параметра
+plot1 <- ggplot(data = diabetes, aes(x = CLASS, y = Urea, fill = Gender)) +
+  geom_boxplot() +
+  labs(x = "Класс диабета", y = "Уровень мочевины") +
+  scale_fill_manual(values = c("pink", "lightblue"))
+
+plot2 <- ggplot(data = diabetes, aes(x = CLASS, y = Cr, fill = Gender)) +
+  geom_boxplot() +
+  labs(x = "Класс диабета", y = "Уровень креатинина") +
+  scale_fill_manual(values = c("pink", "lightblue"))
+
+plot3 <- ggplot(data = diabetes, aes(x = CLASS, y = HbA1c, fill = Gender)) +
+  geom_boxplot() +
+  labs(x = "Класс диабета", y = "Уровень HbA1c") +
+  scale_fill_manual(values = c("pink", "lightblue"))
+
+plot4 <- ggplot(data = diabetes, aes(x = CLASS, y = AGE, fill = Gender)) +
+  geom_boxplot() +
+  labs(x = "Класс диабета", y = "Возраст") +
+  scale_fill_manual(values = c("pink", "lightblue"))
+
+plot5 <- ggplot(data = diabetes, aes(x = CLASS, y = Chol, fill = Gender)) +
+  geom_boxplot() +
+  labs(x = "Класс диабета", y = "Уровень холестерина") +
+  scale_fill_manual(values = c("pink", "lightblue"))
+
+plot6 <- ggplot(data = diabetes, aes(x = CLASS, y = BMI, fill = Gender)) +
+  geom_boxplot() +
+  labs(x = "Класс диабета", y = "Индекс массы тела") +
+  scale_fill_manual(values = c("pink", "lightblue"))
+
+# Собираем все графики на одном изображении
+grid.arrange(plot1, plot2, plot3, plot4, plot5, plot6, ncol = 3)
+
