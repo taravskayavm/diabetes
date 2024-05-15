@@ -22,9 +22,175 @@ print(chi_sq_test)
 
 
 
-# Выводы о связи гликированного гемоглобина и диабета ---------------------
+# Сравнение показателей между классами Y и P ---------------------
 
-# Двухвыборочный независимый t-тест для уровня холестерина между классом
-t_test_result <- t.test(Chol ~ factor(CLASS), data = diabetes_subset, subset = CLASS != "N")
+# Двухвыборочный независимый t-тест для оценки различий показателей AGE и Класса
+t_test_result <- t.test(AGE ~ factor(CLASS), data = diabetes, subset = CLASS != "N")
 print(t_test_result)
+# Выполнение U-теста для переменной AGE между группами P и Y
+u_test_result <- wilcox.test(AGE ~ factor(CLASS), data = diabetes, subset = CLASS != "N")
+print(u_test_result)
 
+# Двухвыборочный независимый t-тест для оценки различий показателей Urea и Класса
+t_test_result <- t.test(Urea ~ factor(CLASS), data = diabetes, subset = CLASS != "N")
+print(t_test_result)
+# Выполнение U-теста для переменной Urea между группами P и Y
+u_test_result <- wilcox.test(Urea ~ factor(CLASS), data = diabetes, subset = CLASS != "N")
+print(u_test_result)
+
+# Двухвыборочный независимый t-тест для оценки различий показателей Cr и Класса
+t_test_result <- t.test(Cr ~ factor(CLASS), data = diabetes, subset = CLASS != "N")
+print(t_test_result)
+# Выполнение U-теста для переменной Cr между группами P и Y
+u_test_result <- wilcox.test(Cr ~ factor(CLASS), data = diabetes, subset = CLASS != "N")
+print(u_test_result)
+
+# Двухвыборочный независимый t-тест для оценки различий показателей HbA1c и Класса
+t_test_result <- t.test(HbA1c ~ factor(CLASS), data = diabetes, subset = CLASS != "N")
+print(t_test_result)
+# Выполнение U-теста для переменной HbA1c между группами P и Y
+u_test_result <- wilcox.test(HbA1c ~ factor(CLASS), data = diabetes, subset = CLASS != "N")
+print(u_test_result)
+
+# Двухвыборочный независимый t-тест для оценки различий показателей Chol и Класса
+t_test_result <- t.test(Chol ~ factor(CLASS), data = diabetes, subset = CLASS != "N")
+print(t_test_result)
+# Выполнение U-теста для переменной Chol между группами P и Y
+u_test_result <- wilcox.test(Chol ~ factor(CLASS), data = diabetes, subset = CLASS != "N")
+print(u_test_result)
+
+# Двухвыборочный независимый t-тест для оценки различий показателей TG и Класса
+t_test_result <- t.test(TG ~ factor(CLASS), data = diabetes, subset = CLASS != "N")
+print(t_test_result)
+# Выполнение U-теста для переменной TG между группами P и Y
+u_test_result <- wilcox.test(TG ~ factor(CLASS), data = diabetes, subset = CLASS != "N")
+print(u_test_result)
+
+# Двухвыборочный независимый t-тест для оценки различий показателей HDL и Класса
+t_test_result <- t.test(HDL ~ factor(CLASS), data = diabetes, subset = CLASS != "N")
+print(t_test_result)
+# Выполнение U-теста для переменной HDL между группами P и Y
+u_test_result <- wilcox.test(HDL ~ factor(CLASS), data = diabetes, subset = CLASS != "N")
+print(u_test_result)
+
+# Двухвыборочный независимый t-тест для оценки различий показателей LDL и Класса
+t_test_result <- t.test(LDL ~ factor(CLASS), data = diabetes, subset = CLASS != "N")
+print(t_test_result)
+# Выполнение U-теста для переменной LDL между группами P и Y
+u_test_result <- wilcox.test(LDL ~ factor(CLASS), data = diabetes, subset = CLASS != "N")
+print(u_test_result)
+
+# Двухвыборочный независимый t-тест для оценки различий показателей VLDL и Класса
+t_test_result <- t.test(VLDL ~ factor(CLASS), data = diabetes, subset = CLASS != "N")
+print(t_test_result)
+# Выполнение U-теста для переменной VLDL между группами P и Y
+u_test_result <- wilcox.test(VLDL ~ factor(CLASS), data = diabetes, subset = CLASS != "N")
+print(u_test_result)
+
+# Двухвыборочный независимый t-тест для оценки различий показателей BMI и Класса
+t_test_result <- t.test(BMI ~ factor(CLASS), data = diabetes, subset = CLASS != "N")
+print(t_test_result)
+# Выполнение U-теста для переменной BMI между группами P и Y
+u_test_result <- wilcox.test(BMI ~ factor(CLASS), data = diabetes, subset = CLASS != "N")
+print(u_test_result)
+
+
+
+
+# Сравнение показателей между классами Y и N ---------------------
+
+# Двухвыборочный независимый t-тест для оценки различий показателей AGE и Класса
+t_test_result <- t.test(AGE ~ factor(CLASS), data = diabetes, subset = CLASS != "P")
+print(t_test_result)
+# Выполнение U-теста для переменной AGE между группами Y и N
+u_test_result <- wilcox.test(AGE ~ factor(CLASS), data = diabetes, subset = CLASS != "P")
+print(u_test_result)
+
+# Двухвыборочный независимый t-тест для оценки различий показателей Urea и Класса
+t_test_result <- t.test(Urea ~ factor(CLASS), data = diabetes, subset = CLASS != "P")
+print(t_test_result)
+# Выполнение U-теста для переменной Urea между группами Y и N
+u_test_result <- wilcox.test(Urea ~ factor(CLASS), data = diabetes, subset = CLASS != "P")
+print(u_test_result)
+
+# Двухвыборочный независимый t-тест для оценки различий показателей Cr и Класса
+t_test_result <- t.test(Cr ~ factor(CLASS), data = diabetes, subset = CLASS != "P")
+print(t_test_result)
+# Выполнение U-теста для переменной Cr между группами Y и N
+u_test_result <- wilcox.test(Cr ~ factor(CLASS), data = diabetes, subset = CLASS != "P")
+print(u_test_result)
+
+# Двухвыборочный независимый t-тест для оценки различий показателей HbA1c и Класса
+t_test_result <- t.test(HbA1c ~ factor(CLASS), data = diabetes, subset = CLASS != "P")
+print(t_test_result)
+# Выполнение U-теста для переменной HbA1c между группами Y и N
+u_test_result <- wilcox.test(HbA1c ~ factor(CLASS), data = diabetes, subset = CLASS != "P")
+print(u_test_result)
+
+# Двухвыборочный независимый t-тест для оценки различий показателей Chol и Класса
+t_test_result <- t.test(Chol ~ factor(CLASS), data = diabetes, subset = CLASS != "P")
+print(t_test_result)
+# Выполнение U-теста для переменной Chol между группами Y и N
+u_test_result <- wilcox.test(Chol ~ factor(CLASS), data = diabetes, subset = CLASS != "P")
+print(u_test_result)
+
+# Двухвыборочный независимый t-тест для оценки различий показателей TG и Класса
+t_test_result <- t.test(TG ~ factor(CLASS), data = diabetes, subset = CLASS != "P")
+print(t_test_result)
+# Выполнение U-теста для переменной TG между группами Y и N
+u_test_result <- wilcox.test(TG ~ factor(CLASS), data = diabetes, subset = CLASS != "P")
+print(u_test_result)
+
+# Двухвыборочный независимый t-тест для оценки различий показателей HDL и Класса
+t_test_result <- t.test(HDL ~ factor(CLASS), data = diabetes, subset = CLASS != "P")
+print(t_test_result)
+# Выполнение U-теста для переменной HDL между группами Y и N
+u_test_result <- wilcox.test(HDL ~ factor(CLASS), data = diabetes, subset = CLASS != "P")
+print(u_test_result)
+
+# Двухвыборочный независимый t-тест для оценки различий показателей LDL и Класса
+t_test_result <- t.test(LDL ~ factor(CLASS), data = diabetes, subset = CLASS != "P")
+print(t_test_result)
+# Выполнение U-теста для переменной LDL между группами Y и N
+u_test_result <- wilcox.test(LDL ~ factor(CLASS), data = diabetes, subset = CLASS != "P")
+print(u_test_result)
+
+# Двухвыборочный независимый t-тест для оценки различий показателей VLDL и Класса
+t_test_result <- t.test(VLDL ~ factor(CLASS), data = diabetes, subset = CLASS != "P")
+print(t_test_result)
+# Выполнение U-теста для переменной VLDL между группами Y и N
+u_test_result <- wilcox.test(VLDL ~ factor(CLASS), data = diabetes, subset = CLASS != "P")
+print(u_test_result)
+
+# Двухвыборочный независимый t-тест для оценки различий показателей BMI и Класса
+t_test_result <- t.test(BMI ~ factor(CLASS), data = diabetes, subset = CLASS != "P")
+print(t_test_result)
+# Выполнение U-теста для переменной BMI между группами Y и N
+u_test_result <- wilcox.test(BMI ~ factor(CLASS), data = diabetes, subset = CLASS != "P")
+print(u_test_result)
+
+
+# ANOVA -------------------------------------------------------------------
+# Создание списка для результатов ANOVA
+results <- list()
+
+# Перебор каждой колонки и выполнение ANOVA теста
+for(col_name in c("AGE", "Urea", "Cr", "HbA1c", "Chol", "TG", "HDL", "LDL", "VLDL", "BMI")) {
+  # Формирование формулы для каждой колонки
+  formula_str <- paste(col_name, "~ CLASS")
+  formula_obj <- as.formula(formula_str)
+  
+  # Выполнение ANOVA теста
+  anova_result <- aov(formula = formula_obj, data = diabetes)
+  
+  # Сохранение результатов
+  results[[col_name]] <- summary(anova_result)
+}
+
+# Вывод результатов
+results
+
+# Интерпретация: ----------------------------------------------------------
+# Результаты ANOVA теста показывают статистическую значимость различий между группами CLASS для переменных AGE, HbA1c, Chol, TG, VLDL и BMI, так как p-value < 0.05 (уровень значимости). 
+# Это означает, что есть статистически значимые различия в этих переменных между разными классами. 
+# Для остальных переменных (Urea, Cr, HDL, LDL) различия не являются статистически значимыми.
