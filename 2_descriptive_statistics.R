@@ -118,34 +118,51 @@ ggplot(data = diabetes, aes(x = BMI)) +
 # Создание графиков для каждого параметра
 plot1 <- ggplot(data = diabetes, aes(x = CLASS, y = Urea, fill = Gender)) +
   geom_boxplot() +
-  labs(x = "Patient class", y = "Urea") +
-  scale_fill_manual(values = c("#DB7093", "#4169E1"))
-
+  labs(x = "Patient class", y = "Urea, mmol/L") +
+  scale_fill_manual(values = c("#DB7093", "#4169E1")) +
+  theme(
+    panel.background = element_rect(fill = "white"),  # Установка белого фона
+    panel.grid.major = element_line(color = "gray", linetype = "solid"))  # Настройка сетки
 
 plot2 <- ggplot(data = diabetes, aes(x = CLASS, y = Cr, fill = Gender)) +
   geom_boxplot() +
-  labs(x = "Patient class", y = "Creatinine") +
-  scale_fill_manual(values = c("#DB7093", "#4169E1"))
+  labs(x = "Patient class", y = "Creatinine, µmol/L") +
+  scale_fill_manual(values = c("#DB7093", "#4169E1"))  +
+  theme(
+    panel.background = element_rect(fill = "white"),  # Установка белого фона
+    panel.grid.major = element_line(color = "gray", linetype = "solid"))  # Настройка сетки
 
 plot3 <- ggplot(data = diabetes, aes(x = CLASS, y = HbA1c, fill = Gender)) +
   geom_boxplot() +
-  labs(x = "Patient class", y = "HbA1c") +
-  scale_fill_manual(values = c("#DB7093", "#4169E1"))
+  labs(x = "Patient class", y = "HbA1c, %") +
+  scale_fill_manual(values = c("#DB7093", "#4169E1")) + 
+  theme(
+    panel.background = element_rect(fill = "white"),  # Установка белого фона
+    panel.grid.major = element_line(color = "gray", linetype = "solid"))  # Настройка сетки
 
 plot4 <- ggplot(data = diabetes, aes(x = CLASS, y = AGE, fill = Gender)) +
   geom_boxplot() +
-  labs(x = "Patient class", y = "Age") +
-  scale_fill_manual(values = c("#DB7093", "#4169E1"))
+  labs(x = "Patient class", y = "Age, years") +
+  scale_fill_manual(values = c("#DB7093", "#4169E1")) +
+  theme(
+    panel.background = element_rect(fill = "white"),  # Установка белого фона
+    panel.grid.major = element_line(color = "gray", linetype = "solid"))  # Настройка сетки
 
 plot5 <- ggplot(data = diabetes, aes(x = CLASS, y = Chol, fill = Gender)) +
   geom_boxplot() +
-  labs(x = "Patient class", y = "Cholesterol") +
-  scale_fill_manual(values = c("#DB7093", "#4169E1"))
+  labs(x = "Patient class", y = "Cholesterol, mmol/L") +
+  scale_fill_manual(values = c("#DB7093", "#4169E1")) +
+  theme(
+    panel.background = element_rect(fill = "white"),  # Установка белого фона
+    panel.grid.major = element_line(color = "gray", linetype = "solid"))  # Настройка сетки
 
 plot6 <- ggplot(data = diabetes, aes(x = CLASS, y = BMI, fill = Gender)) +
   geom_boxplot() +
   labs(x = "Patient class", y = "Body Mass Index") +
-  scale_fill_manual(values = c("#DB7093", "#4169E1"))
+  scale_fill_manual(values = c("#DB7093", "#4169E1")) +
+  theme(
+    panel.background = element_rect(fill = "white"),  # Установка белого фона
+    panel.grid.major = element_line(color = "gray", linetype = "solid"))  # Настройка сетки
 
 # Собираем все графики на одном изображении
 grid.arrange(plot1, plot2, plot3, plot4, plot5, plot6, ncol = 3)
@@ -156,27 +173,35 @@ grid.arrange(plot1, plot2, plot3, plot4, plot5, plot6, ncol = 3)
 
 plot7 <- ggplot(data = diabetes, aes(x = CLASS, y = TG, fill = Gender)) +
   geom_boxplot() +
-  labs(x = "Patient class", y = "Triglycerides") +
-  scale_fill_manual(values = c("#DB7093", "#4169E1"))
-
-plot7_with_signif <- ggpaired(diabetes, x = "CLASS", y = "TG", facet.by = "Gender",
-                              type = "parametric", legend = "none",
-                              line.color = "black", line.size = 0.5)
+  labs(x = "Patient class", y = "Triglycerides, mmol/L") +
+  scale_fill_manual(values = c("#DB7093", "#4169E1")) +
+  theme(
+    panel.background = element_rect(fill = "white"),  # Установка белого фона
+    panel.grid.major = element_line(color = "gray", linetype = "solid"))  # Настройка сетки
 
 plot8 <- ggplot(data = diabetes, aes(x = CLASS, y = HDL, fill = Gender)) +
   geom_boxplot() +
-  labs(x = "Patient class", y = "High Density Lipoprotein") +
-  scale_fill_manual(values = c("#DB7093", "#4169E1"))
+  labs(x = "Patient class", y = "High Density Lipoprotein, mmol/L") +
+  scale_fill_manual(values = c("#DB7093", "#4169E1")) +
+  theme(
+    panel.background = element_rect(fill = "white"),  # Установка белого фона
+    panel.grid.major = element_line(color = "gray", linetype = "solid"))  # Настройка сетки
 
 plot9 <- ggplot(data = diabetes, aes(x = CLASS, y = LDL, fill = Gender)) +
   geom_boxplot() +
-  labs(x = "Patient class", y = "Low Density Lipoprotein") +
-  scale_fill_manual(values = c("#DB7093", "#4169E1"))
+  labs(x = "Patient class", y = "Low Density Lipoprotein, mmol/L") +
+  scale_fill_manual(values = c("#DB7093", "#4169E1")) +
+  theme(
+    panel.background = element_rect(fill = "white"),  # Установка белого фона
+    panel.grid.major = element_line(color = "gray", linetype = "solid"))  # Настройка сетки
 
 plot10 <- ggplot(data = diabetes, aes(x = CLASS, y = VLDL, fill = Gender)) +
   geom_boxplot() +
-  labs(x = "Patient class", y = "Very Low Density Lipoprotein") +
-  scale_fill_manual(values = c("#DB7093", "#4169E1"))
+  labs(x = "Patient class", y = "Very Low Density Lipoprotein, mmol/L") +
+  scale_fill_manual(values = c("#DB7093", "#4169E1")) +
+  theme(
+    panel.background = element_rect(fill = "white"),  # Установка белого фона
+    panel.grid.major = element_line(color = "gray", linetype = "solid"))  # Настройка сетки
 
 # Собираем все графики на одном изображении
 grid.arrange(plot7, plot8, plot9, plot10, ncol = 2)
