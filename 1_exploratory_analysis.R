@@ -156,7 +156,7 @@ upper_bound_BMI <- Q3_BMI + 1.5 * IQR_BMI
 # Находим выбросы
 outliers_BMI <- diabetes$BMI < lower_bound_BMI | diabetes$BMI > upper_bound_BMI
 outliers_BMI_data <- diabetes[outliers_BMI, ]
-print(outliers_BMI_data, n = 87)
+print(outliers_BMI_data)
 
 
 # Замена значения в колонке BMI
@@ -170,6 +170,44 @@ diabetes <- diabetes %>%
     BMI == 3765 ~ 37.62,
     BMI == 3516 ~ 35.16,
     BMI == 2733 ~ 27.33,
+    BMI == 235 ~ 23.5,
+    BMI == 245 ~ 24.5,
+    BMI == 225 ~ 22.5,
+    BMI == 246 ~ 24.6,
+    BMI == 195 ~ 19.5,
+    BMI == 372 ~ 37.2,
+    BMI == 374 ~ 37.4,
+    BMI == 343 ~ 34.3,
+    BMI == 283 ~ 28.3,
+    BMI == 315 ~ 31.5,
+    BMI == 339 ~ 33.9,
+    BMI == 314 ~ 31.4,
+    BMI == 315 ~ 31.5,
+    BMI == 366 ~ 36.6,
+    BMI == 301 ~ 30.1,
+    BMI == 366 ~ 36.6,
+    BMI == 29.36 ~ 34.3,
+    BMI == 274 ~ 27.4,
+    BMI == 295 ~ 29.5,
+    BMI == 346 ~ 34.6,
+    BMI == 273 ~ 27.3,
+    BMI == 312 ~ 31.2,
+    BMI == 405 ~ 40.5,
+    BMI == 2117 ~ 21.17,
+    BMI == 2936 ~ 29.36,
+    BMI == 329 ~ 32.9,
+    BMI == 4325 ~ 43.25,
+    BMI == 3918 ~ 39.18,
+    BMI == 345 ~ 34.5,
+    BMI == 336 ~ 33.6,
+    BMI == 3405 ~ 34.05,
+    BMI == 2775 ~ 27.75,
+    BMI == 352 ~ 35.2,
+    BMI == 3611 ~ 36.11,
+    BMI == 3862 ~ 38.62,
+    BMI == 302 ~ 30.2,
+    BMI == 2963 ~ 29.63,
+    BMI == 256 ~ 25.6,
     TRUE ~ BMI         # Для сохранения остальных значений без изменений
   ))
 
