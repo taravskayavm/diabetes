@@ -186,16 +186,26 @@ patients_count
 # Столбчатая диаграмма распределения числа пациентов по полу и классу
 ggplot(data = patients_count, aes(x = CLASS, y = count, fill = Gender)) +
   geom_bar(stat = "identity", position = "dodge") +
-  labs(title = "Распределение числа пациентов по полу и классу диабета", x = "Класс", y = "Число пациентов") +
+  labs(title = "Distribution of the Number of Patients by Gender and Diabetes Class", x = "Class", y = "Number of Patients") +
   scale_fill_manual(values = c("#DB7093", "#4169E1"))  + # Настройка цветов
-  theme(plot.title = element_text(hjust = 0.5))
+  theme(plot.title = element_text(hjust = 0.5),
+        panel.background = element_rect(fill = "white"),
+        panel.grid.major = element_line(color = "gray", linetype = "solid"),
+        panel.grid.minor = element_blank(), # Оставляем только основную сетку
+        panel.grid.major.y = element_line(color = "gray", linetype = "solid")) +
+  scale_y_continuous(breaks = seq(0, 500, by = 50))
 
 # Гистограмма распределения возраста пациентов в зависимости от класса
 diabetes %>%
   ggplot(aes(x = AGE, fill = CLASS)) + 
   geom_histogram(bins = 10, color = "black", alpha = 0.5) +
-  labs(title = "Распределение возраста пациентов по классам", x = "Возраст", y = "Частота") +
-  theme_minimal()
+  labs(title = "Distribution of Patients' Age by Classes", x = "Age", y = "Number of Patients") +
+  theme(plot.title = element_text(hjust = 0.5),
+        panel.background = element_rect(fill = "white"),
+        panel.grid.major = element_line(color = "gray", linetype = "solid"),
+        panel.grid.minor = element_blank(), # Оставляем только основную сетку
+        panel.grid.major.y = element_line(color = "gray", linetype = "solid")) +
+  scale_y_continuous(breaks = seq(0, 500, by = 50))
 
 
 min(diabetes$AGE)
